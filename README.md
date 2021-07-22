@@ -32,7 +32,7 @@ This should run without anything other than Visual Studio or IIS.
 ### Board
 
 - Contain a name
-- Contain the date is was created
+- Contain the date it was created
 - Contain any number of post-it notes
 
 ### Post-It
