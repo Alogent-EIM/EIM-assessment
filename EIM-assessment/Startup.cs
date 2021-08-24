@@ -17,10 +17,19 @@ namespace EIM_assessment
         }
 
         public IConfiguration Configuration { get; }
+        readonly string corsPolicy = "_corsPolicy";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+              options.AddPolicy(name: corsPolicy,
+                  builder =>
+                  {
+                      builder.AllowAnyHeader().AllowAnyMethod()
+                          .AllowAnyOrigin();
+                  }));
+
             services.AddMvc();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
